@@ -10,8 +10,8 @@ namespace WcfService1
 {
     public class MatrixOperations
     {
-        //private string _docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        private string _docPath = "D:/studia/przetwarzanie rozproszone/projekt/wdsl/wynik/";
+        
+        private string _docPath = "D:/results";
         private MatrixInfo _matrixA;
         private MatrixInfo _matrixB;
 

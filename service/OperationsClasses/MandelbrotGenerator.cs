@@ -21,13 +21,12 @@ namespace WcfService1
         private const double _cyMin = -2.0;
         private const double _cyMax = 2.0;
         private const int _maxColorComponentValue = 255;
-        //private byte[,,] color = new byte[1001, 1001, 4];
         private const int _iterationMax = 200;
         private const double _escapeRadius = 2;
         
         private double _eR2 = _escapeRadius * _escapeRadius;
 
-        private string _docPath = "D:/studia/przetwarzanie rozproszone/projekt/wdsl/wynik/";
+        private string _docPath = "D:/results";
 
         public string Generate_set(int x, int y, int threadAmount)
         {

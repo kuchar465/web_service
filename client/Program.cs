@@ -12,7 +12,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.ReadLine();
-            string _docPath = "D:/studia/przetwarzanie rozproszone/projekt/wdsl/wynik/";
+            string _docPath = "D:/results";
 
             ServiceReference1.Service1Client _Client = new ServiceReference1.Service1Client();
             ServiceReference1.Service2Client _Client2 = new ServiceReference1.Service2Client();
