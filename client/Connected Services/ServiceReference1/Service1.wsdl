@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49849/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49849/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetMatrix_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatrix" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMatrix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MultiplyMatrix_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyMatrix" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MultiplyMatrix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SendMatrix_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMatrix" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SendMatrix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService2_GenerateMandelbrottSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateMandelbrottSet" />
+  </wsdl:message>
+  <wsdl:message name="IService2_GenerateMandelbrottSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateMandelbrottSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService2_GetMandelbrottSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMandelbrottSet" />
+  </wsdl:message>
+  <wsdl:message name="IService2_GetMandelbrottSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMandelbrottSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetMatrix">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMatrix" message="tns:IService1_GetMatrix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMatrixResponse" message="tns:IService1_GetMatrix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyMatrix">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MultiplyMatrix" message="tns:IService1_MultiplyMatrix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MultiplyMatrixResponse" message="tns:IService1_MultiplyMatrix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMatrix">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SendMatrix" message="tns:IService1_SendMatrix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SendMatrixResponse" message="tns:IService1_SendMatrix_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IService2">
+    <wsdl:operation name="GenerateMandelbrottSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService2/GenerateMandelbrottSet" message="tns:IService2_GenerateMandelbrottSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService2/GenerateMandelbrottSetResponse" message="tns:IService2_GenerateMandelbrottSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMandelbrottSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService2/GetMandelbrottSet" message="tns:IService2_GetMandelbrottSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService2/GetMandelbrottSetResponse" message="tns:IService2_GetMandelbrottSet_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMatrix">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyMatrix">
+      <soap:operation soapAction="http://tempuri.org/IService1/MultiplyMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMatrix">
+      <soap:operation soapAction="http://tempuri.org/IService1/SendMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IService2" type="tns:IService2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateMandelbrottSet">
+      <soap:operation soapAction="http://tempuri.org/IService2/GenerateMandelbrottSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMandelbrottSet">
+      <soap:operation soapAction="http://tempuri.org/IService2/GetMandelbrottSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:49849/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IService2" binding="tns:BasicHttpBinding_IService2">
+      <soap:address location="http://localhost:49849/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
